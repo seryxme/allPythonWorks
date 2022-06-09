@@ -64,6 +64,6 @@ else:
     if computer_score > player_score:
         print("\nYou lost the game! Better luck next time!")
     elif computer_score < player_score:
-        print("\nYou won the game! you're a master at this!")
+        print("\nYou won the game! You're a master at this!")
     else:
         print("\nAlas! No winner! You're as good as the AI.")
