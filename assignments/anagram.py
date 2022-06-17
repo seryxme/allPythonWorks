@@ -17,8 +17,9 @@ def anagram(num):
 
     return decision
 
-
+count = 0
 #num = int(input("Enter a number: "))
 for number in range(1, 1001):
     print(f"{number:>4d} squared is {number**2:<5d}")
     print(anagram(number))
+print
