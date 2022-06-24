@@ -9,7 +9,7 @@ def longest_string(new_list):
 
 def longest_string2(new_list):
     new_list.sort(key=len)
-    return new_list[len(new_list) - 1]
+    return new_list[-1]
 
 
 fruits = ["apple", "mango", "agbalumo", "orange", "cherry", "pineapple", "water melon", "cucumber", "banana"]

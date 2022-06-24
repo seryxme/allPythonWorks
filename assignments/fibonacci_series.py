@@ -2,7 +2,6 @@ def fibonacci(number):
     x = 0
     y = 1
     fib_seq = [x, y]
-    sum = 0
     count = 0
 
     while count <= number:
@@ -12,4 +11,4 @@ def fibonacci(number):
         count += 1
     return fib_seq
 
-print(fibonacci(12))
+print(fibonacci(5))

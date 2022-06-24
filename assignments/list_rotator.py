@@ -11,4 +11,12 @@ def list_rotator(new_list, rot_num):
 
 num_set = [1, 2, 3, 4, 5, 6, 7]
 
-print(list_rotator(num_set, 4))
+print(list_rotator(num_set, 3))
+
+
+def rotate(new_list: list[int], rot_num: int) -> list[int]:
+    rot_num = rot_num % len(new_list)
+    return new_list[rot_num:] + new_list[:rot_num]
+
+
+print(rotate(num_set, 2))

@@ -1,7 +1,7 @@
-def bracketCheck(brackets):
+def bracket_check(brackets):
     if len(brackets) % 2 != 0:
         return False
-    brac_list = list(brackets)
+
     brace_open = '{'
     brace_close = '}'
     square_open = '['
@@ -9,7 +9,7 @@ def bracketCheck(brackets):
     par_open = '('
     par_close = ')'
     open_stack = []
-    for bracket in brac_list:
+    for bracket in brackets:
         if bracket == brace_open:
             open_stack.append(bracket)
         if bracket == square_open:
@@ -39,14 +39,37 @@ def bracketCheck(brackets):
         return False
 
 
-brackets = "{{()[]}}"
-print(bracketCheck(brackets))
+def bracket_check2(bracks):
+    if len(bracks) % 2 != 0:
+        return False
+
+    open_stack = []
+
+    for bracket in bracks:
+        if bracket in "{[(":
+            open_stack.append(bracket)
+        elif bracket in "})]":
+            if bracket == "}" and open_stack[-1] == "{":
+                open_stack.pop()
+            elif bracket == "[" and open_stack[-1] == "]":
+                open_stack.pop()
+            elif bracket == "(" and open_stack[-1] == ")":
+                open_stack.pop()
+            else:
+                return False
+        else:
+            return False
+    return True
+
+
+brackets1 = "{{()[]}}"
+print(bracket_check2(brackets1))
 
 brackets2 = "[({))}(]"
-print(bracketCheck(brackets2))
+print(bracket_check2(brackets2))
 
 brackets3 = "{()[()])({[]}}"
-print(bracketCheck(brackets3))
+print(bracket_check2(brackets3))
 
 brackets4 = "{({[]()}())[]}"
-print(bracketCheck(brackets4))
+print(bracket_check2(brackets4))
