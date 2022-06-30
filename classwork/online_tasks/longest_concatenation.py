@@ -16,15 +16,16 @@ def longest_concat(s, k):
             count += 1
             i = 0
 
-    concat.sort(key=len, reverse=True)
-    longest_str = concat[0]
-    longest = len(concat[0])
-    for a in range(len(concat)):
-        if len(concat[a]) > longest:
-            longest_str = concat[a]
 
-    return longest_str
+    # concat.sort(key=len, reverse=True)
+    # longest_str = concat[0]
+    # longest = len(concat[0])
+    # for a in range(len(concat)):
+    #     if len(concat[a]) > longest:
+    #         longest_str = concat[a]
+
+    return max(concat, key=len)
 
 
-lst = ["abigail", "theta", "ten", "buga", "tetracycline", "abigail"]
+lst = ["abigail", "theta", "ten", "buga", "theta", "abigail"]
 print(longest_concat(lst, 2))
